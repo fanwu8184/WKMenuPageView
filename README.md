@@ -4,7 +4,7 @@
 ![demo3](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo3.gif)
 ![demo4](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo4.gif)
 ![demo5](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo5.gif)
-![demo6](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo6.gif)
+![demo9](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo9.gif)
 ![demo7](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo7.gif)
 ![demo8](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo8.gif)
 
