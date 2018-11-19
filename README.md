@@ -100,7 +100,7 @@ And done, That is it!
 ![demo3](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo3.gif)
 ![demo4](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo4.gif)
 
-Setting up custom view (ex: a view for your logo)
+Setting up custom view (for example: a view for your logo)
 ```sh
 let a = UIView()
 a.backgroundColor = .yellow
