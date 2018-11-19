@@ -1,4 +1,4 @@
-# WKMenuPageView
+# Menu Page
 ![demo1](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo1.gif)
 ![demo2](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo2.gif)
 ![demo3](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo3.gif)
@@ -95,71 +95,69 @@ override func viewDidLoad() {
 And done, That is it!
 
 ### Features
-#### Update Your MenuPageView After Setup
-![demo2](https://github.com/fanwu8184/MenuPage/blob/master/Demos/demo2.gif)
+#### Setting Up Custome View And Manipulate It
+![demo2](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo2.gif)
+![demo3](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo3.gif)
+![demo4](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo4.gif)
 
-See the example code below
+Setting up
 ```sh
-@objc func change(_ sender: UIBarButtonItem) {
-    let imageView: UIImageView = {
-        let iv = UIImageView()
-        iv.image = UIImage(named: "calendar")
-        return iv
-    }()
-        
-    let pageView5: UIView = {
-        let view = UIView()
-        view.backgroundColor = .black
-        return view
-    }()
-        
-    let pageView6: UIView = {
-        let view = UIView()
-        view.backgroundColor = .green
-        return view
-    }()
-        
-        let eee = MenuPage(title: "AAA", pageView: pageView5)
-        let fff = MenuPage(title: "FFF", menuView: imageView, pageView: pageView6)
-        menuPage.menuPages = [eee, fff]
-}
+let a = UIView()
+a.backgroundColor = .yellow
+wkMenuPageView.menuViewCustomView = a
+```
+Change the position
+```sh
+wkMenuPageView.menuCustomContainerPosition = .bottom
+```
+Change the factor, default is 0.25
+```sh
+wkMenuPageView.menuCustomContainerFactor = 0.75
 ```
 
-#### Set the Menu Bar Position
-![demo3](https://github.com/fanwu8184/MenuPage/blob/master/Demos/demo3.gif)
+#### Change Menu Item Hight
+![demo5](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo5.gif)
 
-See the example code below
+default is 50
 ```sh
-func changeMenuBarPosition() {
-    menuPage.isMenuBarAtTop = !menuPage.isMenuBarAtTop
-}
+wkMenuPageView.menuItemHeight = 100
 ```
 
-#### Set The Columns Number for Menu On Screen, default is 5
-![demo4](https://github.com/fanwu8184/MenuPage/blob/master/Demos/demo4.gif)
+#### Update Menu Iten
+![demo9](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo9.gif)
 
-See the example code below
 ```sh
-menuPage.columnsOfMenuOnScreen = 3
+var switchStatus = true
+@objc func changeMI() {
+        if switchStatus {
+            wkMenuPageView.menuPages = []
+        } else {
+            wkMenuPageView.menuPages = [aaa, bbb, ccc, ddd, eee]
+        }
+        switchStatus = !switchStatus
+    }
 ```
 
-#### You Can Swipe Out And Swipe Back The Menu
-![demo5](https://github.com/fanwu8184/MenuPage/blob/master/Demos/demo5.gif)
+#### Setting Up Indication View
+![demo7](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo7.gif)
 
-You need to set isSwipingOutModeOn to true first.
 ```sh
-menuPage.isSwipingOutModeOn = true
-```
-You also can set swipeFactor up to determine how far you want the menu bar out, default is 0.5
-```sh
-menuPage.swipeFactor = 0.2
+wkMenuPageView.menuIndicationView.backgroundColor = .lightGray
 ```
 
-#### Setting Up Menu Indication View
-![demo6](https://github.com/fanwu8184/MenuPage/blob/master/Demos/demo6.gif)
+#### Setting Up Scroll Direction
+![demo8](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo8.gif)
 
 ```sh
-menuPage.menuBarIndicationView.backgroundColor = .lightGray
+var switchStatus = true
+@objc func changePL() {
+        if switchStatus {
+            wkMenuPageView.pageScrollDirection = .horizontal
+        } else {
+            wkMenuPageView.pageScrollDirection = .vertical
+        }
+        switchStatus = !switchStatus
+    }
 ```
 
 #### Use CustomMenuItem Protocol To Customize Your Selected Or Unselected Menu Item's Behavior
@@ -183,47 +181,33 @@ let example = MenuPage(title: "example", menuView: customMenuView, pageView: UIV
 ```
 
 #### The Other Settings
-**Change the menu bar height, default is 50**
+**Change horizontalMenuOutFactor and verticalOutMenuFactor, default is 0.8**
 ```sh
-menuPage.menuBarHeight = 100
+wkMenuPageView.horizontalMenuOutFactor = 0.5
+wkMenuPageView.verticalOutMenuFactor = 0.5
 ```
-**Change the menu bar background color, default is UIcolor.clear**
+**Change the menu background color, default is UIcolor.white**
 ```sh
-menuPage.menuBarBackgroundColor = .orange
+wkMenuPageView.menuViewBackgroundColor = UIColor.lightGray
 ```
-**Change the horizontal menu bar color, default is UIcolor.lightGray**
-```sh
-menuPage.horizontalMenuBarColor = .blue
-```
+
 **Change selected menu color, default is UIcolor.red**
 ```sh
-menuPage.selectedMenuColor = .black
+wkMenuPageView.selectedMenuColor = UIColor.yellow
 ```
 **Change not selected menu color, default is UIcolor.blue**
 ```sh
-menuPage.notSelectedMenuColor = .yellow
+wkMenuPageView.notSelectedMenuColor = UIColor.yellow
 ```
 **Set up a closure for currentIndexDidChange so that you can track the menu index change**
 ```sh
-menuPage.currentIndexDidChange = { index in print(menuPage.menuPages[index].title) }
+wkMenuPageView.currentIndexDidChange = { index in print(menuPage.menuPages[index].title) }
 
 Tip: set this up before you set menuPage.menuPages will let you be able to track the initial value change
 ```
 **Disable pages view bounce**
 ```sh
-menuPage.setPagesBounce(false)
-```
-**Change the menu expand indicator color**
-```sh
-menuPage.menuBarExpandIndicatorColor = .red
-```
-**Change the horizontal menu bar's height**
-```sh
-menuPage.heightOfHorizontalBarInMenuBar = 0
-```
-**Change the padding between horizontal menu bar and menu bar items**
-```sh
-menuPage.paddingBetweenHorizontalBarAndMenuBarItem = 0
+wkMenuPageView.setPagesBounce(false)
 ```
 
 License
