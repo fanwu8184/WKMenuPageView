@@ -68,6 +68,17 @@ class WKMenuPageView: BasicView, UICollectionViewDataSource, UICollectionViewDel
         }
     }
     
+    var selectedMenuColor: UIColor! {
+        didSet {
+            menuView.selectedColor = selectedMenuColor
+        }
+    }
+    var notSelectedMenuColor: UIColor! {
+        didSet {
+            menuView.notSelectedColor = notSelectedMenuColor
+        }
+    }
+    
     var menuItemHeight: CGFloat {
         get {
             return menuView.menuItemHeight
