@@ -95,12 +95,12 @@ override func viewDidLoad() {
 And done, That is it!
 
 ### Features
-#### Setting Up Custome View And Manipulate It
+#### Setting Up Custom View And Manipulate It
 ![demo2](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo2.gif)
 ![demo3](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo3.gif)
 ![demo4](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo4.gif)
 
-Setting up
+Setting up custom view (ex: a view for your logo)
 ```sh
 let a = UIView()
 a.backgroundColor = .yellow
