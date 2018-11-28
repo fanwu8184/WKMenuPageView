@@ -16,7 +16,7 @@ WkMenuPageView is an easy to use and flexible Menu View for iOS development. Wha
 - Easy To Use
 
 ### Installation
-Just need to download the MenuPage and SupportFiles folders into your project.
+Just need to download the WKMenuPage and SupportFiles folders into your project.
 
 ### How to use
 ##### Create Your Menu Views
