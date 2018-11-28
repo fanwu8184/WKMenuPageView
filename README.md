@@ -71,7 +71,7 @@ let ccc = MenuPage(title: "CCC", menuView: button, pageView: pageView3)
 let ddd = MenuPage(title: "DDD", menuView: imageView, pageView: pageView4)
 ```
 
-##### Create Instance of MenuPageView
+##### Create An Instance of WKMenuPageView
 ```sh
 let wkMenuPageView = WKMenuPageView()
 wkMenuPageView.menuPages = [aaa, bbb, ccc, ddd]
@@ -81,7 +81,7 @@ or
 let wkMenuPageView =  WKMenuPageView(menuPages: [aaa, bbb, ccc, ddd])
 ```
 
-##### Setup MenuPageView
+##### Setup WKMenuPageView
 ```sh
 override func viewDidLoad() {
     super.viewDidLoad()
