@@ -1,4 +1,4 @@
-# Menu Page
+# WKMenuPageView
 ![demo1](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo1.gif)
 ![demo2](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo2.gif)
 ![demo3](https://github.com/fanwu8184/WKMenuPageView/blob/master/Demos/demo3.gif)
